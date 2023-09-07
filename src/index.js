@@ -8,16 +8,15 @@ import CreateAccount from './components/CreateAccount';
 import Login from './components/Login';
 import Deposit from './components/Deposit';
 import Withdraw from './components/Withdraw';
-import Balance from './components/Balance';
 import AllData from './components/AllData';
 import { HashRouter, Routes, Route } from 'react-router-dom';
-
+import './index.css';
 
 function Spa() {
   return (
     <HashRouter>
       <NavBar/>
-      <UserContext.Provider value={{users:[{name:'abel',email:'abel@mit.edu',password:'secret',balance:100}]}}>
+      <UserContext.Provider value={{users:[{name:'name',email:'email',password:'secret',balance:100}]}}>
         <div className="container" style={{padding: "20px"}}>
         <Routes>
             <Route path="/" element={<Home />} />
@@ -25,7 +24,6 @@ function Spa() {
             <Route path="/login" element={<Login />} />
             <Route path="/deposit" element={<Deposit />} />
             <Route path="/withdraw" element={<Withdraw />} />
-            <Route path="/balance" element={<Balance />} />
             <Route path="/alldata" element={<AllData />} />
           </Routes>
         </div>

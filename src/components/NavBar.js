@@ -25,9 +25,6 @@ function NavBar(){
                 <a className="nav-link" href="#/withdraw/" title="View your withdraws">Withdraw</a>
                 </li>
                 <li className="nav-item">
-                <a className="nav-link" href="#/balance/" title="View your balance">Balance</a>
-                </li>
-                <li className="nav-item">
                 <a className="nav-link" href="#/alldata/" title="Peek at other´s data">All Data</a>
                 </li>          
             </ul>
