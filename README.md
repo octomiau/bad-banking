@@ -1,6 +1,6 @@
 # Bad Banking App
 
-Bad Banking is a simple React application that simulates basic banking operations. It includes a login system, account creation, deposit, withdrawal, balance checking, and transaction history.
+Bad Banking is a simple React application that simulates basic banking operations. It includes a login system, account creation, deposit, withdrawal, balance checking, and transaction history. It is called "Bad Banking" because it stores and displays the entered data.
 <img src="./public/githubScreen.png">
 
 ## 🌟 Features:
