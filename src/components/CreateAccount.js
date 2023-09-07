@@ -2,6 +2,18 @@ import React from 'react';
 import { UserContext, Card } from './context';
 
 function CreateAccount(){
+    const bgStyle = {
+        backgroundImage: 'url(/BGbank-createaccount.png)',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: -1
+    }; 
+
     const [show, setShow]         = React.useState(true);
     const [status, setStatus]     = React.useState('');
     const [name, setName]         = React.useState('');
@@ -59,31 +71,34 @@ function CreateAccount(){
     }
   
     return (
-      <Card
-        bgcolor="card border-dark mb-3"
-        header="Create Account"
-        txtcolor="black"
-        status={status}
-        body={show ? (  
-                <>
-                Name<br/>
-                <input type="input" className="form-control" id="name" placeholder="Enter name" value={name} onChange={e => setName(e.currentTarget.value)} /><br/>
-                {nameError && <div style={{ color: 'red' }}>{nameError}</div>}
-                Email address<br/>
-                <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value)}/><br/>
-                {emailError && <div style={{ color: 'red' }}>{emailError}</div>}
-                Password<br/>
-                <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)}/><br/>
-                {passwordError && <div style={{ color: 'red' }}>{passwordError}</div>}
-                <button type="submit" className="btn btn-outline-primary" onClick={handleCreate}>Create Account</button>
-                </>
-              ):(
-                <>
-                <h5>Success</h5>
-                <button type="submit" className="btn btn-primary" onClick={clearForm}>Add another account</button>
-                </>
-              )}
-      />
+    <>
+        <div style={bgStyle}></div>
+            <Card
+                bgcolor="card border-dark mb-3"
+                header="Create Account"
+                txtcolor="black"
+                status={status}
+                body={show ? (  
+                        <>
+                        Name<br/>
+                        <input type="input" className="form-control" id="name" placeholder="Enter name" value={name} onChange={e => setName(e.currentTarget.value)} /><br/>
+                        {nameError && <div style={{ color: 'red' }}>{nameError}</div>}
+                        Email address<br/>
+                        <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value)}/><br/>
+                        {emailError && <div style={{ color: 'red' }}>{emailError}</div>}
+                        Password<br/>
+                        <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)}/><br/>
+                        {passwordError && <div style={{ color: 'red' }}>{passwordError}</div>}
+                        <button type="submit" className="btn btn-outline-primary" onClick={handleCreate}>Create Account</button>
+                        </>
+                    ):(
+                        <>
+                        <h5>Success</h5>
+                        <button type="submit" className="btn btn-primary" onClick={clearForm}>Add another account</button>
+                        </>
+                    )}
+            />
+    </>
     )
   }
 
