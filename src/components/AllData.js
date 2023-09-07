@@ -17,17 +17,22 @@ function AllData() {
 
     return (
         <>
-            <div style={bgStyle}></div>
-            <Card
-                txtcolor="black"
-                header="Bad Bank"
-                title="Peek at other's data!"
-                text=""
-                body={
-                    <>
-                    <img src="alldataCard.png" className="img-fluid" alt="Responsive image" />
-                    <div className="table-responsive table-hover">
-                            <table className="table borderless">
+        <div className="maincontent">
+                <div style={bgStyle}></div>
+                <div className="row">
+                    <div className="col-md-6">
+                        <Card
+                            txtcolor="black"
+                            header="Bad Bank"
+                            title="Peek at other's data!"
+                            text=""
+                            body={<img src="alldataCard.png" className="img-fluid" alt="Responsive image" />}
+                        />
+                    </div>
+                    <div className="col-md-6">
+                        {/* Directly renders the table here, outside of the Card component */}
+                        <div className="table-responsive table-hover">
+                            <table className="table borderless transparent-white-bg">
                                 <thead>
                                     <tr>
                                         <th>Name</th>
@@ -48,9 +53,9 @@ function AllData() {
                                 </tbody>
                             </table>
                         </div>
-                    </>
-                }
-            />
+                    </div>
+                </div>
+            </div>
         </>
     );
 }

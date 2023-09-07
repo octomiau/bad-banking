@@ -50,35 +50,37 @@ function Deposit(){
   
     return (
         <>
-            <div style={bgStyle}></div>
-                <Card
-                    bgcolor="card border-dark mb-3"
-                    header="Deposit"
-                    txtcolor="black"
-                    status={status}
-                    body={(
-                        <>
-                        Balance: ${balance} <br /> {/* Display the balance */}
-                        {show ? (
+            <div className="maincontent">
+                <div style={bgStyle}></div>
+                    <Card
+                        bgcolor="card border-dark mb-3"
+                        header="Deposit"
+                        txtcolor="black"
+                        status={status}
+                        body={(
                             <>
-                            <img src="depositCard.png" className="img-fluid" alt="Responsive image"/>
-                            Deposit<br/>
-                            <input type="input" className="form-control" id="deposit" placeholder="Enter amount" value={deposit} onChange={e => setDeposit(e.currentTarget.value)} /><br/>
-                            {depositError && <div style={{ color: 'red' }}>{depositError}</div>}
-                            <button type="submit" className="btn btn-outline-primary" onClick={handleCreate} disabled={!deposit}>Make Deposit</button>
-                            </>
-                        ):(
-                            <>
-                            <h5>Success</h5>
-                            <img src="balanceCard.png" className="img-fluid" alt="Responsive image"/>
-                            <button type="submit" className="btn btn-primary" onClick={clearForm}>Make another deposit</button>
+                            Balance: ${balance} <br /> {/* Display the balance */}
+                            {show ? (
+                                <>
+                                <img src="depositCard.png" className="img-fluid" alt="Responsive image"/>
+                                Deposit<br/>
+                                <input type="input" className="form-control" id="deposit" placeholder="Enter amount" value={deposit} onChange={e => setDeposit(e.currentTarget.value)} /><br/>
+                                {depositError && <div style={{ color: 'red' }}>{depositError}</div>}
+                                <button type="submit" className="btn btn-outline-primary" onClick={handleCreate} disabled={!deposit}>Make Deposit</button>
+                                </>
+                            ):(
+                                <>
+                                <h5>Success</h5>
+                                <img src="balanceCard.png" className="img-fluid" alt="Responsive image"/>
+                                <button type="submit" className="btn btn-primary" onClick={clearForm}>Make another deposit</button>
+                                </>
+                                
+                            )}
                             </>
                             
                         )}
-                        </>
-                        
-                    )}
-                    />
+                        />
+            </div>
         </>
     )}
 

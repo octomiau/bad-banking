@@ -14,21 +14,31 @@ import './index.css';
 
 function Spa() {
   return (
-    <HashRouter>
-      <NavBar/>
-      <UserContext.Provider value={{users:[{name:'name',email:'email',password:'secret',balance:100}]}}>
-        <div className="container" style={{padding: "20px"}}>
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/CreateAccount" element={<CreateAccount />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/deposit" element={<Deposit />} />
-            <Route path="/withdraw" element={<Withdraw />} />
-            <Route path="/alldata" element={<AllData />} />
-          </Routes>
-        </div>
-      </UserContext.Provider>      
-    </HashRouter>
+    <div className="holygrail-grid">
+      <div className="header">
+      <HashRouter>
+          <NavBar/>
+          <UserContext.Provider value={{users:[{name:'name',email:'email',password:'secret',balance:100}]}}>
+            <div className="container" style={{padding: "20px"}}>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/CreateAccount" element={<CreateAccount />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/deposit" element={<Deposit />} />
+                <Route path="/withdraw" element={<Withdraw />} />
+                <Route path="/alldata" element={<AllData />} />
+              </Routes>
+            </div>
+          </UserContext.Provider>      
+        </HashRouter>
+      </div>
+      <div className="left-sidebar"></div>
+      <div className="main-content">
+    
+      </div>
+      <div className="right-sidebar"></div>
+      <div className="footer"></div>
+    </div>
   );
 }
 

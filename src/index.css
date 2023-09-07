@@ -46,3 +46,41 @@ code {
     display: flex;
     flex-direction: column;
 }
+
+.holygrail-grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr; /* 1 fraction for left sidebar, 3 fractions for content, 1 fraction for right sidebar */
+  grid-template-rows: auto 1fr auto; /* auto for header, 1 fraction for content, auto for footer */
+  height: 100vh;
+  grid-template-areas:
+      "header header header"
+      "leftsidebar maincontent rightsidebar"
+      "footer footer footer";
+}
+
+.header {
+  grid-area: header;
+}
+
+.left-sidebar {
+  grid-area: leftsidebar;
+}
+
+.maincontent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto; 
+}
+
+.right-sidebar {
+  grid-area: rightsidebar;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.transparent-white-bg {
+  background-color: rgba(255, 255, 255, 0.5);
+}

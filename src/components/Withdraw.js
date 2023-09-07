@@ -60,35 +60,37 @@ function Withdraw(){
   
     return (
         <>
-            <div style={bgStyle}></div>
-                <Card
-                    bgcolor="card border-dark mb-3"
-                    header="Withdraw"
-                    txtcolor="black"
-                    status={status}
-                    body={(
-                        <>
-                        Balance: ${balance} <br /> {/* Display the balance */}
-                        {show ? (
+            <div className="maincontent">
+                <div style={bgStyle}></div>
+                    <Card
+                        bgcolor="card border-dark mb-3"
+                        header="Withdraw"
+                        txtcolor="black"
+                        status={status}
+                        body={(
                             <>
-                            <img src="withdrawCard.png" className="img-fluid" alt="Responsive image"/>
-                            Withdraw<br/>
-                            <input type="input" className="form-control" id="withdraw" placeholder="Enter amount" value={withdraw} onChange={e => setWithdraw(e.currentTarget.value)} /><br/>
-                            {withdrawError && <div style={{ color: 'red' }}>{withdrawError}</div>}
-                            <button type="submit" className="btn btn-outline-primary" onClick={handleCreate} disabled={!withdraw}>Make withdraw</button>
-                            </>
-                        ):(
-                            <>
-                            <h5>Success</h5>
-                            <img src="balanceCard.png" className="img-fluid" alt="Responsive image"/>
-                            <button type="submit" className="btn btn-primary" onClick={clearForm}>Make another withdraw opperation</button>
+                            Balance: ${balance} <br /> {/* Display the balance */}
+                            {show ? (
+                                <>
+                                <img src="withdrawCard.png" className="img-fluid" alt="Responsive image"/>
+                                Withdraw<br/>
+                                <input type="input" className="form-control" id="withdraw" placeholder="Enter amount" value={withdraw} onChange={e => setWithdraw(e.currentTarget.value)} /><br/>
+                                {withdrawError && <div style={{ color: 'red' }}>{withdrawError}</div>}
+                                <button type="submit" className="btn btn-outline-primary" onClick={handleCreate} disabled={!withdraw}>Make withdraw</button>
+                                </>
+                            ):(
+                                <>
+                                <h5>Success</h5>
+                                <img src="balanceCard.png" className="img-fluid" alt="Responsive image"/>
+                                <button type="submit" className="btn btn-primary" onClick={clearForm}>Make another withdraw opperation</button>
+                                </>
+                                
+                            )}
                             </>
                             
                         )}
-                        </>
-                        
-                    )}
-                    />
+                        />
+            </div>
         </>
     )}
 

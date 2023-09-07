@@ -3,7 +3,7 @@ import { UserContext, Card } from './context';
 
 function LogIn(){
     const bgStyle = {
-        backgroundImage: 'url(/BGbank-createaccount.png)',
+        backgroundImage: 'url(/BGbank-login.png)',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         position: 'absolute',
@@ -60,29 +60,33 @@ function LogIn(){
   
     return (
     <>
-        <div style={bgStyle}></div>
-            <Card
-                bgcolor="card border-dark mb-3"
-                header="Log In"
-                txtcolor="black"
-                status={status}
-                body={show ? (  
-                        <>
-                         Name<br/>
-                        <input type="input" className="form-control" id="name" placeholder="Enter name" value={name} onChange={e => setName(e.currentTarget.value)} /><br/>
-                        {nameError && <div style={{ color: 'red' }}>{nameError}</div>}
-                        Password<br/>
-                        <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)}/><br/>
-                        {passwordError && <div style={{ color: 'red' }}>{passwordError}</div>}
-                        <button type="submit" className="btn btn-outline-primary" onClick={handleCreate}>Log In</button>
-                        </>
-                    ):(
-                        <>
-                        <h5>Welcome back {name}!</h5>
-                        <button type="submit" className="btn btn-primary" onClick={clearForm}>Change to another account</button>
-                        </>
-                    )}
-            />
+        <div className="maincontent">
+            <div className="maincontent">
+                <div style={bgStyle}></div>
+                    <Card
+                        bgcolor="card border-dark mb-3"
+                        header="Log In"
+                        txtcolor="black"
+                        status={status}
+                        body={show ? (  
+                                <>
+                                Name<br/>
+                                <input type="input" className="form-control" id="name" placeholder="Enter name" value={name} onChange={e => setName(e.currentTarget.value)} /><br/>
+                                {nameError && <div style={{ color: 'red' }}>{nameError}</div>}
+                                Password<br/>
+                                <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)}/><br/>
+                                {passwordError && <div style={{ color: 'red' }}>{passwordError}</div>}
+                                <button type="submit" className="btn btn-outline-primary" onClick={handleCreate}>Log In</button>
+                                </>
+                            ):(
+                                <>
+                                <h5>Welcome back {name}!</h5>
+                                <button type="submit" className="btn btn-primary" onClick={clearForm}>Change to another account</button>
+                                </>
+                            )}
+                    />
+            </div>
+        </div>
     </>
     )
   }

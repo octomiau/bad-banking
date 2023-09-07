@@ -15,14 +15,17 @@ function Home(){
     };
     return (
         <>
-            <div style={bgStyle}></div>
-                <Card
-                    txtcolor="black"
-                    header="Bad Bank"
-                    title="Welcome to the bank!"
-                    text="Welcome to the unsafest bank arround the web. Be sure any data you enter will be public."
-                    body={(<img src="homeCard.png" className="img-fluid" alt="Responsive image"/>)}
-                />    
+            <div className="maincontent">
+                <div style={bgStyle}></div>
+                    <Card
+                        txtcolor="black"
+                        header="Bad Bank"
+                        title="Welcome to the bank!"
+                        text="Welcome to the unsafest bank arround the web. Be sure any data you enter will be public."
+                        body={(<img src="homeCard.png" className="img-fluid" alt="Responsive image"/>)}
+                    />   
+
+             </div>    
         </>
     );  
   }
